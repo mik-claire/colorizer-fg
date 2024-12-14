@@ -105,7 +105,7 @@ function! s:SetMatcher(color, pat) "{{{1
   let group = 'Color' . strpart(a:color, 1)
   if !hlexists(group) || s:force_group_update
     " Always set gui* as user may switch to GUI version and it's cheap
-    exe 'hi '.group.' guifg='.a:color'
+    exe 'hi '.group.' guifg='.a:color
   endif
   if !exists("w:colormatches[a:pat]")
     let w:colormatches[a:pat] = matchadd(group, a:pat)
