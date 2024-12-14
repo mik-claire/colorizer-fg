@@ -1,6 +1,6 @@
 .PHONY: all clean install uninstall
 DOTVIM=$(HOME)/.vim
-FILES=plugin/colorizer.vim autoload/colorizer.vim
+FILES=plugin/colorizer-fg.vim autoload/colorizer-fg.vim
 
 all:
 	@echo "Available phony targets: install, uninstall"
