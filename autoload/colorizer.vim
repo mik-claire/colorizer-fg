@@ -104,12 +104,8 @@ function! s:SetMatcher(color, pat) "{{{1
   " "color" is the converted color and "pat" is what to highlight
   let group = 'Color' . strpart(a:color, 1)
   if !hlexists(group) || s:force_group_update
-    let bg = a:color
-    if &t_Co == 256 && !(has('termguicolors') && &termguicolors)
-      exe 'hi '.group.' ctermbg='.s:Rgb2xterm(bg).' ctermbg='.s:Rgb2xterm(a:color)
-    endif
     " Always set gui* as user may switch to GUI version and it's cheap
-    exe 'hi '.group.' guifg='.a:color' guibg='.bg.
+    exe 'hi '.group.' guifg='.a:color'
   endif
   if !exists("w:colormatches[a:pat]")
     let w:colormatches[a:pat] = matchadd(group, a:pat)
